@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head class ="site-header">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Welcome to Choi & Co. Events – your trusted partner in planning unforgettable celebrations."/>
+  <title>Choi & Co. Events | Home</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<header class="site-header">
+  <div class="header-logo">
+    <img src="images/choilogo.png" alt="Choi & Co. Events Logo" class="logo" />
+  </div>
+  <p>Your guide to celebrating life beautifully.</p>
+</header>
+
+<nav class="top-nav">
+    <ul class="nav-list">
+      <!-- Home -->
+      <li><a href="pages/about.html" target="contentFrame">🏠 Home</a></li>
+
+      <!-- Event Types Dropdown -->
+      <li class="dropdown">
+        <button onclick="toggleDropdown('eventDropdown')">📋 Event Types ▾</button>
+        <ul id="eventDropdown" class="dropdown-content">
+          <li><a href="pages/birthdays.html" target="contentFrame">🎉 Birthdays</a></li>
+          <li><a href="pages/baptismal.html" target="contentFrame">💧 Baptismal</a></li>
+          <li><a href="pages/valentines.html" target="contentFrame">❤️ Valentine’s</a></li>
+          <li><a href="pages/wedding.html" target="contentFrame">💍 Wedding</a></li>
+          <li><a href="pages/christmas&new-year.html" target="contentFrame">🎄 Christmas & 🎆 New Year</a></li>
+          <li><a href="pages/gender-reveal.html" target="contentFrame">👶 Gender Reveal</a></li>
+        </ul>
+      </li>
+
+      <!-- Others Dropdown -->
+      <li class="dropdown">
+        <button onclick="toggleDropdown('othersDropdown')">📁 Others ▾</button>
+        <ul id="othersDropdown" class="dropdown-content">
+          <li><a href="pages/booking.html" target="contentFrame">📅 Booking Dates</a></li>
+          <li><a href="pages/decorations.html" target="contentFrame">🎀 Decorations</a></li>
+          <li><a href="pages/credits.html" target="contentFrame">📄 Credits</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+
+    <div class="content">
+      <iframe name="contentFrame" src="pages/about.html"></iframe>
+    </div>
+  </div>
+
+  <footer>
+    <p>Contact us: choiandco.events@email.com | (0912) 345 6789</p>
+  </footer>
+
+  <script>
+    function toggleDropdown(id) {
+      document.querySelectorAll('.dropdown-content').forEach(menu => {
+        if (menu.id !== id) {
+          menu.style.display = 'none';
+        }
+      });
+
+      const menu = document.getElementById(id);
+      menu.style.display = (menu.style.display === "block") ? "none" : "block";
+    }
+
+    document.addEventListener("click", function (e) {
+      if (!e.target.closest(".dropdown")) {
+        document.querySelectorAll('.dropdown-content').forEach(menu => {
+          menu.style.display = 'none';
+        });
+      }
+    });
+  </script>
+</body>
+</html>
