@@ -1,9 +1,13 @@
+/* ================= HEADER & LOGO ================= */
+.site-header {
+  background-color: #7a0000; /* same as logo background */
+  padding: 10px 10px;
+}
 
 .header-logo {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 0;
 }
 
 .logo {
@@ -12,7 +16,33 @@
   object-fit: contain;
 }
 
+.tagline {
+  font-family: 'Comic Sans MS', cursive, sans-serif; /* corrected font */
+  font-size: 1em;
+  color: #fff3c2;
+  text-align: center;
+  margin-top: 10px;
+}
 
+.home-title {
+  font-family: 'Harlow Solid', cursive;
+  font-size: 1.8em;
+  color: #fff3c2;
+  text-align: center; /* left aligned */
+  margin-top: 5px;
+  margin-left: 20px; /* small left padding */
+}
+
+h4 {
+  font-size: 2.2em;
+  color: #7a0000;
+  text-align: center;
+  font-family: 'Harlow Solid', cursive;
+  margin-bottom: 20px;
+}
+
+
+/* ================= GLOBAL STYLES ================= */
 * {
   margin: 0;
   padding: 0;
@@ -30,99 +60,42 @@ body {
   min-height: 100vh;
 }
 
-.site-header {
-  background: #7a0000;
-  padding: 15px 20px;
-  text-align: center;
+/* ================= NAVBAR ================= */
+.navbar {
+  background-color: #c63c3c;
 }
 
-.site-header h1 {
-  font-size: 2.2em;
-  margin-bottom: 5px;
-  color: white;
-}
-
-.site-header p {
-  font-size: 0.95em;
-  color: #fff3c2;
-  margin-top: 20px;
-}
-
-.top-nav {
-  background-color: #7a0000;
-  padding: 15px 25px;
-  border-bottom: 3px solid #969696;
-}
-
-.nav-list {
-  list-style: none;
-  display: flex;
-  gap: 25px;
-  align-items: center;
-  justify-content: center;
-  margin: 0;
-  padding: 0;
-}
-
-.nav-list li {
-  position: relative;
-}
-
-.nav-list a,
-.nav-list button {
-  background-color: #cc3366;
-  color: white;
-  padding: 10px 16px;
-  border-radius: 6px;
-  text-decoration: none;
+.navbar-nav .nav-link {
+  font-family: 'Harlow Solid', cursive;
+  color: #fff3c2 !important;
   font-weight: bold;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  font-size: 0.95em;
-  align-content: center;
+  text-align: center; /* center nav items */
+  font-size: 20px;
 }
 
-.nav-list a:hover,
-.nav-list button:hover {
-  background-color: #a52a50;
+.navbar-nav .nav-link:hover {
+  color: #ffdede !important;
 }
 
-/* Dropdowns */
-.dropdown-content {
-  display: none;
-  position: absolute;
-  top: 115%;
-  left: 0;
+.navbar .dropdown-menu {
   background-color: #fadada;
-  border: 1px solid #ccc;
   border-radius: 6px;
-  padding: 10px;
-  min-width: 220px;
-  z-index: 10;
 }
 
-.dropdown-content li {
-  margin: 8px 0;
-}
-
-.dropdown-content a {
-  background: none;
+.navbar .dropdown-item {
+  font-family: 'Harlow Solid', cursive;
   color: #7a0000;
-  padding: 6px 10px;
-  border-radius: 4px;
-  display: block;
-  font-weight: normal;
 }
 
-.dropdown-content a:hover {
+.navbar .dropdown-item:hover {
   background-color: #ffe5e5;
   color: #cc3366;
 }
-
+/* ================= CONTENT ================= */
 .content {
+  background-color: #fadada;
   width: 100%;
-  height: calc(100vh - 220px); /* Adjust height */
+  height: calc(100vh - 220px);
 }
 
 iframe {
@@ -131,28 +104,23 @@ iframe {
   border: none;
 }
 
+/* ================= FOOTER ================= */
 footer {
   background-color: #7a0000;
   text-align: center;
-  padding: 15px 20px;
+  padding: 10px 10px;
   font-size: 0.9em;
   color: #fff3c2;
   border-top: 3px solid #ccc;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
 }
 
-/* ------------------------------
-   RESPONSIVE
---------------------------------*/
+/* ================= RESPONSIVE ================= */
 @media (max-width: 768px) {
-  .nav-list {
+  .navbar-nav {
     flex-direction: column;
     align-items: flex-start;
     gap: 10px;
-  }
-
-  .dropdown-content {
-    position: static;
-    width: 100%;
   }
 
   .content {
@@ -160,161 +128,72 @@ footer {
   }
 }
 
-/*ABOUT PAGE SECTION*/ 
-.about-page { 
-    padding: 10px; 
-    max-width: 1500px; 
-    margin: auto; 
-    background-color: #fadada; 
-} 
-.about-page section { 
-    margin-bottom: 40px; 
-} 
-.about-page header h4 { 
-    font-size: 1.8em; 
-    color: #7a0000; 
-    margin-bottom: 10px; 
-    text-align: center;
-    font-family: 'Harlow Solid', cursive;
-} 
-.about-page p { 
-    font-size: 1em; 
-    line-height: 1.6; 
-    color: #444; 
-    font-family: 'comic sans ms', cursive, sans-serif; 
-    text-align: center;
-} 
-hr { 
-    margin-top: 15px; 
-    margin-bottom: 15px; 
-    border-top: 2px solid #ccc; 
-} 
-/* Story section: text and image side by side */ 
-.story-section { 
-    display: flex; 
-    flex-wrap: wrap; 
-    align-items: center; 
-    gap: 20px; 
-} 
-.story-text { 
-    flex: 1 1 60%; 
-} 
-.story-img { 
-    flex: 1 1 20%; 
-    text-align: right; 
-} 
-.story-img img { 
-    max-width: 100%; 
-    height: auto; 
-    border-radius: 10px; 
-    object-fit: cover;
-    box-shadow: 0 4px 8px rgba(2, 2, 2, 0.2); 
+/* ================= ABOUT PAGE ================= */
+.about-page {
+  padding: 10px;
+  max-width: 1500px;
+  margin: auto;
+  background-color: #fadada;
 }
 
-/* birthdays section */
-.birthday-categories {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin-top: 20px;
+.about-page section {
+  margin-bottom: 40px;
 }
 
-.bday-box {
-    flex: 1 1 30%;
-    background: #fff;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 15px;
-    margin: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
+.about-page header h4 {
+  font-size: 2.2em;
+  color: #7a0000;
+  margin-bottom: 10px;
+  text-align: center;
+  font-family: 'Harlow Solid', cursive;
 }
 
-.bday-box:hover {
-    transform: translateY(-5px);
+.about-page p {
+  font-size: 1.1em;
+  line-height: 1.6;
+  color: #444;
+  font-family: 'comic sans ms', cursive, sans-serif;
+  text-align: center;
 }
 
-.bday-box img {
-    max-width: 100%;
-    border-radius: 8px;
-    margin-bottom: 10px;
+hr {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border-top: 2px solid #ccc;
 }
 
-.bday-box h3 {
-    font-size: 1.5em;
-    color: #7a0000;
-    margin-bottom: 10px;
-    text-align: center;
-    font-family: 'Harlow Solid', cursive;
-}
-
-.bday-box p {
-    font-size: 0.95em;
-    line-height: 1.5;
-    color: #555;
-}
-
-.about-page p { 
-    font-size: 1.1em; 
-    line-height: 1.6; 
-    color: #444; 
-    font-family: 'comic sans ms', cursive, sans-serif; 
-    text-align: center;
-}
-
-.about-page h4 { 
-    font-size: 1.5em; 
-    color: #7a0000; 
-    margin-bottom: 10px; 
-    text-align: center;
-    font-family: 'Harlow Solid', cursive;
-}
-
-/* Baptismal Categories Section */
-.baptismal-categories {
+/* ================= STORY SECTION ================= */
+.story-section {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   gap: 20px;
-  justify-content: center;
-  margin-top: 30px;
 }
 
-/* Valentine Categories Section */
-.valentine-categories {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-  margin-top: 30px;
+.story-text {
+  flex: 1 1 60%;
 }
 
-/* Wedding Categories Section */
-.wedding-categories {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-  margin-top: 30px;
+.story-img {
+  flex: 1 1 20%;
+  text-align: right;
 }
 
-.holiday-categories {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-  margin-top: 30px;
+.story-img img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 4px 8px rgba(2, 2, 2, 0.2);
 }
 
-/* Gender Reveal Categories */
-.gender-categories {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-  margin-top: 30px;
-}
-
-/* Decoration Categories */
+/* ================= EVENT SECTIONS ================= */
+.birthday-categories,
+.baptismal-categories,
+.valentine-categories,
+.wedding-categories,
+.holiday-categories,
+.gender-categories,
 .decor-categories {
   display: flex;
   flex-wrap: wrap;
@@ -323,7 +202,42 @@ hr {
   margin-top: 30px;
 }
 
-/* Booking Form */
+.bday-box {
+  flex: 1 1 30%;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 15px;
+  margin: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.bday-box:hover {
+  transform: translateY(-5px);
+}
+
+.bday-box img {
+  max-width: 100%;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.bday-box h3 {
+  font-size: 1.5em;
+  color: #7a0000;
+  margin-bottom: 10px;
+  text-align: center;
+  font-family: 'Harlow Solid', cursive;
+}
+
+.bday-box p {
+  font-size: 0.95em;
+  line-height: 1.5;
+  color: #555;
+}
+
+/* ================= BOOKING FORM ================= */
 .booking-form-section {
   display: flex;
   justify-content: center;
@@ -340,6 +254,7 @@ hr {
   display: flex;
   flex-direction: column;
   gap: 15px;
+  font-family: 'comic sans ms', cursive, sans-serif;
 }
 
 .booking-form label {
@@ -354,6 +269,7 @@ hr {
   border: 1px solid #ccc;
   border-radius: 6px;
   font-size: 1em;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
 }
 
 .booking-form button {
@@ -371,4 +287,3 @@ hr {
 .booking-form button:hover {
   background-color: #a52a50;
 }
-

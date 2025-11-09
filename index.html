@@ -1,81 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-<head class ="site-header">
+<head class="site-header">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta name="description" content="Welcome to Choi & Co. Events – your trusted partner in planning unforgettable celebrations."/>
   <title>Choi & Co. Events | Home</title>
+
+  <!-- Custom CSS -->
   <link rel="stylesheet" href="style.css" />
-  <script src="script.js"></script>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom JS -->
+  <script src="script.js" defer></script>
 </head>
 
+<body>
+
 <header class="site-header">
-  <div class="header-logo">
+  <div class="header-logo mb-2">
     <img src="images/choilogo.png" alt="Choi & Co. Events Logo" class="logo" />
   </div>
-  <p>Your guide to celebrating life beautifully.</p>
+  <p class="tagline">Your guide to celebrating life beautifully.</p>
+  <div class="home-title">Choi & Co. Events</div>
 </header>
 
-<nav class="top-nav">
-    <ul class="nav-list">
-      <!-- Home -->
-      <li><a href="pages/about.html" target="contentFrame">🏠 Home</a></li>
-
-      <!-- Event Types Dropdown -->
-      <li class="dropdown">
-        <button onclick="toggleDropdown('eventDropdown')">📋 Event Types ▾</button>
-        <ul id="eventDropdown" class="dropdown-content">
-          <li><a href="pages/birthdays.html" target="contentFrame">🎉 Birthdays</a></li>
-          <li><a href="pages/baptismal.html" target="contentFrame">💧 Baptismal</a></li>
-          <li><a href="pages/valentines.html" target="contentFrame">❤️ Valentine’s</a></li>
-          <li><a href="pages/wedding.html" target="contentFrame">💍 Wedding</a></li>
-          <li><a href="pages/christmas&new-year.html" target="contentFrame">🎄 Christmas & 🎆 New Year</a></li>
-          <li><a href="pages/gender-reveal.html" target="contentFrame">👶 Gender Reveal</a></li>
-        </ul>
-      </li>
-
-      <!-- Others Dropdown -->
-      <li class="dropdown">
-        <button onclick="toggleDropdown('othersDropdown')">📁 Others ▾</button>
-        <ul id="othersDropdown" class="dropdown-content">
-          <li><a href="pages/booking.html" target="contentFrame">📅 Booking Dates</a></li>
-          <li><a href="pages/decorations.html" target="contentFrame">🎀 Decorations</a></li>
-          <li><a href="pages/credits.html" target="contentFrame">📄 Credits</a></li>
-        </ul>
-      </li>
-    </ul>
-  </nav>
-
-    <div class="content">
-      <iframe name="contentFrame" src="pages/about.html"></iframe>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark">
+  <div class="container justify-content-center">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+      <ul class="navbar-nav text-center">
+        <li class="nav-item"><a class="nav-link" href="pages/about.html" target="contentFrame">About</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Event Types</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="pages/birthdays.html" target="contentFrame">🎉 Birthdays</a></li>
+            <li><a class="dropdown-item" href="pages/baptismal.html" target="contentFrame">💧 Baptismal</a></li>
+            <li><a class="dropdown-item" href="pages/valentines.html" target="contentFrame">❤️ Valentine’s</a></li>
+            <li><a class="dropdown-item" href="pages/wedding.html" target="contentFrame">💍 Wedding</a></li>
+            <li><a class="dropdown-item" href="pages/christmas&new-year.html" target="contentFrame">🎄 Christmas & 🎆 New Year</a></li>
+            <li><a class="dropdown-item" href="pages/gender-reveal.html" target="contentFrame">👶 Gender Reveal</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Others</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="pages/booking.html" target="contentFrame">📅 Booking Dates</a></li>
+            <li><a class="dropdown-item" href="pages/decorations.html" target="contentFrame">🎀 Decorations</a></li>
+            <li><a class="dropdown-item" href="pages/credits.html" target="contentFrame">📄 Credits</a></li>
+          </ul>
+        </li>
+      </ul>
     </div>
   </div>
+</nav>
 
-  <footer>
-    <p>Contact us: choiandco.events@email.com | (0912) 345 6789</p>
-  </footer>
+  <!-- Content iframe -->
+  <div class="content">
+    <iframe name="contentFrame" src="pages/about.html"></iframe>
+  </div>
 
-  <script>
-  // Toggle dropdown menus (already existing)
-  function toggleDropdown(id) {
-    document.querySelectorAll('.dropdown-content').forEach(menu => {
-      if (menu.id !== id) {
-        menu.style.display = 'none';
-      }
-    });
+<!-- Footer -->
+<footer class="text-center bg-danger text-white py-3 mt-3">
+  <p>Contact us: choiandco.events@email.com | (0912) 345 6789</p>
+</footer>
 
-    const menu = document.getElementById(id);
-    menu.style.display = (menu.style.display === "block") ? "none" : "block";
-  }
-
-  document.addEventListener("click", function (e) {
-    if (!e.target.closest(".dropdown")) {
-      document.querySelectorAll('.dropdown-content').forEach(menu => {
-        menu.style.display = 'none';
-      });
-    }
-  });
-</script>
+<!-- Bootstrap JS Bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
