@@ -6,6 +6,7 @@
   <meta name="description" content="Book your event with Choi & Co. Events. Select your preferred date, event type, and share your details with us."/>
   <title>Booking | Choi & Co. Events</title>
   <link rel="stylesheet" href="../style.css" />
+  <script src="../script.js"></script>
 </head>
 <body>
 
@@ -55,6 +56,36 @@
       </form>
     </section>
   </main>
+
+  <script>
+function validateBooking(event) {
+    event.preventDefault();
+    
+    const fullname = document.getElementById("fullname").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const eventType = document.getElementById("eventType").value;
+    const date = document.getElementById("date").value;
+    const bookingMessage = document.getElementById("bookingMessage");
+    const emailRegex = /\S+@\S+\.\S+/;
+
+    if (!fullname || !email || !eventType || !date) {
+        bookingMessage.style.color = "red";
+        bookingMessage.innerText = "Please fill in all required fields!";
+        return;
+    }
+
+    if (!emailRegex.test(email)) {
+        bookingMessage.style.color = "red";
+        bookingMessage.innerText = "Please enter a valid email!";
+        return;
+    }
+
+    bookingMessage.style.color = "green";
+    bookingMessage.innerText = `Thank you, ${fullname}! Your booking for ${eventType} on ${date} has been submitted.`;
+    
+    document.getElementById("bookingForm").reset();
+}
+</script>
 
 </body>
 </html>

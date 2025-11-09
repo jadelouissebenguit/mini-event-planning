@@ -6,6 +6,7 @@
   <meta name="description" content="Welcome to Choi & Co. Events – your trusted partner in planning unforgettable celebrations."/>
   <title>Choi & Co. Events | Home</title>
   <link rel="stylesheet" href="style.css" />
+  <script src="script.js"></script>
 </head>
 
 <header class="site-header">
@@ -55,24 +56,26 @@
   </footer>
 
   <script>
-    function toggleDropdown(id) {
-      document.querySelectorAll('.dropdown-content').forEach(menu => {
-        if (menu.id !== id) {
-          menu.style.display = 'none';
-        }
-      });
-
-      const menu = document.getElementById(id);
-      menu.style.display = (menu.style.display === "block") ? "none" : "block";
-    }
-
-    document.addEventListener("click", function (e) {
-      if (!e.target.closest(".dropdown")) {
-        document.querySelectorAll('.dropdown-content').forEach(menu => {
-          menu.style.display = 'none';
-        });
+  // Toggle dropdown menus (already existing)
+  function toggleDropdown(id) {
+    document.querySelectorAll('.dropdown-content').forEach(menu => {
+      if (menu.id !== id) {
+        menu.style.display = 'none';
       }
     });
-  </script>
+
+    const menu = document.getElementById(id);
+    menu.style.display = (menu.style.display === "block") ? "none" : "block";
+  }
+
+  document.addEventListener("click", function (e) {
+    if (!e.target.closest(".dropdown")) {
+      document.querySelectorAll('.dropdown-content').forEach(menu => {
+        menu.style.display = 'none';
+      });
+    }
+  });
+</script>
+
 </body>
 </html>
